@@ -115,34 +115,6 @@
 </html>>
    <a href=https://v.wjx.cn/vm/teuG0dL.aspx# 
     <script>
-        // 表单提交与短信通知逻辑（前端示例，后端需对接短信服务商）
-        document.getElementById('auditForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const phone = formData.get('phone');
-            
-            // 1. 前端模拟提交（实际需发送到后端接口）
-            fetch('/api/submit-audit', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('提交成功！审核结果将通过短信发送至您的手机：' + phone);
-                    // 2. 后端触发短信通知（示例：调用阿里云/腾讯云短信API）
-                    // sendSms(phone, `您的报名预审已提交，审核结果将在3-5个工作日内通过短信通知您。`);
-                } else {
-                    alert('提交失败，请稍后重试！');
-                }
-            })
-            .catch(error => {
-                console.error('提交错误：', error);
-                alert('网络错误，请检查网络后重试！');
-            });
-        });
-
-        // 短信发送函数示例（需后端实现，前端仅作调用）
         // function sendSms(phone, content) {
         //     fetch('/api/send-sms', {
         //         method: 'POST',
@@ -154,5 +126,6 @@
 </body>
 
 </html>
+
 
 
