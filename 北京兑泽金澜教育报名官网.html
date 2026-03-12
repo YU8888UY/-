@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京兑泽金澜教育科技有限公司 - 军队文职招生报名</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "SimHei", sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            color: #222;
+            line-height: 1.6;
+        }
+        /* 头部样式 - 正式庄重 */
+        header {
+            background: #0a2463;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        /* 导航栏 */
+        .nav {
+            background: #0f3057;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 16px;
+            display: block;
+        }
+        .nav a:hover {
+            background: #154079;
+        }
+        /* 容器 */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        /* 卡片样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #0a2463;
+        }
+        .card h2 {
+            color: #0a2463;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        /* 表单样式 */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .form-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-item label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-item input, 
+        .form-item select,
+        .form-item textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+        .form-item input:focus, 
+        .form-item select:focus,
+        .form-item textarea:focus {
+            border-color: #0a2463;
+            box-shadow: 0 0 0 2px rgba(10, 36, 99, 0.1);
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 8px;
+        }
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        /* 按钮样式 */
+        .btn {
+            background: #0a2463;
+            color: #ffffff;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #154079;
+        }
+        /* 岗位表/课程/老师模块 */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background: #f8f9fa;
+            color: #0a2463;
+            font-weight: 600;
+        }
+        .teacher-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .teacher-card {
+            border: 1px solid #eee;
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+        }
+        .teacher-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+            border: 3px solid #f0f2f5;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        /* 底部样式 */
+        footer {
+            background: #0a2463;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+        }
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav a {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 头部 -->
+<header>
+    <h1>北京兑泽金澜教育科技有限公司</h1>
+    <p>军队文职招生 · 专业培训 · 一站式报名服务</p>
+</header>
+
+<!-- 导航栏 -->
+<div class="nav">
+    <a href="#home">首页</a>
+    <a href="#post">岗位信息</a>
+    <a href="#course">精品课程</a>
+    <a href="#teacher">师资团队</a>
+    <a href="#apply">报名登记</a>
+    <a href="#contact">联系方式</a>
+</div>
+
+<!-- 主体容器 -->
+<div class="container">
+    <!-- 首页介绍 -->
+    <div class="card" id="home">
+        <h2>关于我们</h2>
+        <p>北京兑泽金澜教育科技有限公司专注于军队文职考试培训与报名服务，拥有专业的师资团队、完善的课程体系和一站式报名指导，助力广大考生顺利上岸军队文职岗位。</p>
+        <p>我们提供从政策解读、岗位匹配、备考培训到报名登记的全流程服务，凭借多年行业经验，帮助考生高效备考、精准报名。</p>
+    </div>
+
+    <!-- 岗位信息 -->
+    <div class="card" id="post">
+        <h2>军队文职岗位表</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>岗位类别</th>
+                        <th>招聘专业</th>
+                        <th>学历要求</th>
+                        <th>考试类型</th>
+                        <th>工作地区</th>
+                        <th>招录人数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>管理岗</td>
+                        <td>行政管理、人力资源</td>
+                        <td>本科及以上</td>
+                        <td>管理类考试</td>
+                        <td>北京、上海、广州</td>
+                        <td>58</td>
+                    </tr>
+                    <tr>
+                        <td>技能岗</td>
+                        <td>计算机、会计、护理</td>
+                        <td>大专及以上</td>
+                        <td>技能类考试</td>
+                        <td>全国各省市</td>
+                        <td>126</td>
+                    </tr>
+                    <tr>
+                        <td>专业技术岗</td>
+                        <td>教育、医疗、工程</td>
+                        <td>本科及以上</td>
+                        <td>通用+专业考试</td>
+                        <td>省会城市为主</td>
+                        <td>98</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>注：以上为部分岗位信息，详情可咨询客服获取完整岗位表。</p>
+    </div>
+
+    <!-- 精品课程 -->
+    <div class="card" id="course">
+        <h2>精品课程体系</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>课程名称</th>
+                        <th>适合岗位</th>
+                        <th>课程时长</th>
+                        <th>课程内容</th>
+                        <th>收费标准</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>文职定向通关班</td>
+                        <td>所有岗位</td>
+                        <td>67课时</td>
+                        <td>公共课精讲、历年真题解析、面试指导</td>
+                        <td>12880元</td>
+                    </tr>
+                    <tr>
+                        <td>VIP密训班</td>
+                        <td>定制需求/全岗位</td>
+                        <td>120课时</td>
+                        <td>公共科目+专业知识+强化实操+全真模拟+面试全流程指导</td>
+                        <td>23880元</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 师资团队 -->
+    <div class="card" id="teacher">
+        <h2>专业师资团队</h2>
+        <div class="teacher-list">
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/120" alt="李老师">
+                <h3>李老师</h3>
+                <p>军队文职考试资深讲师</p>
+                <p>10年文职培训经验，主攻公共科目</p>
+            </div>
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/120" alt="张老师">
+                <h3>张老师</h3>
+                <p>管理岗考试专家</p>
+                <p>8年军队文职管理岗培训经验</p>
+            </div>
+            <div class="teacher-card">
+                <img src="https://via.placeholder.com/120" alt="王老师">
+                <h3>王老师</h3>
+                <p>技能岗实操指导师</p>
+                <p>退役军人，5年技能岗培训经验</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 报名登记表单 -->
+    <div class="card" id="apply">
+        <h2>军队文职报名信息登记</h2>
+        <form id="applyForm" onsubmit="submitForm(event)">
+            <div class="form-grid">
+                <!-- 基本信息 -->
+                <div class="form-item">
+                    <label for="name">姓　　名：</label>
+                    <input type="text" id="name" name="name" required placeholder="请输入真实姓名">
+                </div>
+                <div class="form-item">
+                    <label for="gender">性　　别：</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="男" required> 男</label>
+                        <label><input type="radio" name="gender" value="女"> 女</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="idCard">身份证号码：</label>
+                    <input type="text" id="idCard" name="idCard" required placeholder="请输入18位身份证号">
+                </div>
+                <div class="form-item">
+                    <label for="examArea">考试地区：</label>
+                    <select id="examArea" name="examArea" required>
+                        <option value="">请选择考试地区</option>
+                        <option value="北京">北京</option>
+                        <option value="上海">上海</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="education">文化程度：</label>
+                    <select id="education" name="education" required>
+                        <option value="">请选择文化程度</option>
+                        <option value="大专">大专</option>
+                        <option value="本科">本科</option>
+                        <option value="硕士">硕士</option>
+                        <option value="博士">博士</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="major">专　　业：</label>
+                    <input type="text" id="major" name="major" required placeholder="请输入所学专业">
+                </div>
+                <div class="form-item">
+                    <label>报考专业：</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="applyMajor" value="技能" required> 技能</label>
+                        <label><input type="radio" name="applyMajor" value="管理"> 管理</label>
+                        <label><input type="radio" name="applyMajor" value="都考"> 都考</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="nation">民　　族：</label>
+                    <input type="text" id="nation" name="nation" required placeholder="如：汉族">
+                </div>
+                <div class="form-item">
+                    <label for="phone">手机号码：</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="请输入11位手机号">
+                </div>
+                <div class="form-item">
+                    <label>是否有纹身：</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="tattoo" value="有" required> 有</label>
+                        <label><input type="radio" name="tattoo" value="无"> 无</label>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label for="workPlace">期待工作地点：</label>
+                    <input type="text" id="workPlace" name="workPlace" required placeholder="如：北京市海淀区">
+                </div>
+                <div class="form-item">
+                    <label for="payerName">付款人姓名：</label>
+                    <input type="text" id="payerName" name="payerName" required placeholder="请输入付款人真实姓名">
+                </div>
+                <div class="form-item">
+                    <label for="payerPhone">付款人手机号：</label>
+                    <input type="tel" id="payerPhone" name="payerPhone" required placeholder="请输入付款人11位手机号">
+                </div>
+                <div class="form-item">
+                    <label for="relation">付款人与本人关系：</label>
+                    <input type="text" id="relation" name="relation" required placeholder="如：本人、父母、配偶">
+                </div>
+                <div class="form-item">
+                    <label for="payMethod">支付方式：</label>
+                    <select id="payMethod" name="payMethod" required>
+                        <option value="">请选择支付方式</option>
+                        <option value="微信支付">微信支付</option>
+                        <option value="支付宝">支付宝</option>
+                        <option value="银行卡">银行卡</option>
+                        <option value="现金">现金</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label for="address">邮寄地址：</label>
+                    <textarea id="address" name="address" rows="2" required placeholder="请输入详细邮寄地址（含邮编）"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn">提交报名信息</button>
+        </form>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="card" id="contact">
+        <h2>联系方式</h2>
+        <div class="contact-info">
+            <p>📞 咨询电话：400-123-4567 / 010-88888888</p>
+            <p>📧 电子邮箱：service@duizejinlan.com</p>
+            <p>🏠 公司地址：北京市海淀区XX路XX号XX大厦XX室</p>
+            <p>🕒 工作时间：周一至周日 9:00-18:00（节假日不休）</p>
+            <p>📱 微信公众号：兑泽金澜教育</p>
+        </div>
+    </div>
+</div>
+
+<!-- 底部 -->
+<footer>
+    <p>北京兑泽金澜教育科技有限公司 © 2026 版权所有</p>
+    <p>军队文职招生培训 · 专业服务 · 诚信经营</p>
+</footer>
+
+<!-- 表单提交逻辑 -->
+<script>
+    // 表单提交处理函数
+    function submitForm(event) {
+        // 阻止表单默认提交行为
+        event.preventDefault();
+        
+        // 获取表单所有数据
+        const formData = new FormData(document.getElementById('applyForm'));
+        const formDataObj = {};
+        formData.forEach((value, key) => {
+            formDataObj[key] = value;
+        });
+
+        // 模拟数据提交（实际部署时替换为真实接口）
+        console.log('报名信息提交成功：', formDataObj);
+        
+        // 提示用户提交成功
+        alert('报名信息提交成功！我们的客服人员将在1-2个工作日内与您联系，请保持电话畅通。');
+        
+        // 重置表单
+        document.getElementById('applyForm').reset();
+    }
+</script>
+
+</body>
+</html>
